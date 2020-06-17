@@ -1,15 +1,30 @@
 <!DOCTYPE html>
 <html>
-  <head>
+
+<head>
     <title>QuickGameReviews</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+</head>
 
-  <body>
-    <%= yield %>
-  </body>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <%= render 'partials/common/sidebar' %>
+            <div class="main-container col-md-9">
+                <div class="top-bar row">
+                  <h3>top bar</h3>
+                </div>
+                <div class="row">
+                    <%= yield %>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
 </html>

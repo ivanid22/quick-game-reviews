@@ -1,1 +1,16 @@
-@import 'bootstrap/scss/bootstrap'
+@import 'bootstrap/scss/bootstrap';
+@import './users';
+@import './vars';
+
+body {
+  color: $primary-color;
+}
+
+.sidebar {
+  background-color: $sidebar-background-color;
+  color: $primary-color;
+}
+
+.top-bar {
+  background-color: $top-bar-background-color;
+}
