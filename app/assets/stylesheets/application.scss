@@ -1,16 +1,34 @@
 @import 'bootstrap/scss/bootstrap';
 @import './users';
 @import './vars';
+@import './common';
 
 body {
-  color: $primary-color;
+  color: $color-4;
+  background-color: $color-2;
 }
 
 .sidebar {
-  background-color: $sidebar-background-color;
-  color: $primary-color;
+  background-color: $color-3;
+  color: $color-2;
 }
 
 .top-bar {
-  background-color: $top-bar-background-color;
+  background-color: $color-1;
+}
+
+.main-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.messages {
+  margin-top: 10px;
+  justify-content: center;
+}
+
+.group {
+  padding: 1.5em;
+  background-color: white;
+  border-radius: .6em;
 }

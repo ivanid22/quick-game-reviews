@@ -8,17 +8,29 @@
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
 <body>
     <div class="container-fluid">
         <div class="row">
             <%= render 'partials/common/sidebar' %>
-            <div class="main-container col-md-9">
+            <div class="main-container col-10">
                 <div class="top-bar row">
                   <h3>top bar</h3>
                 </div>
-                <div class="row">
+                <div class="main-content row">
+                    <div class="messages row">
+                    <% if flash[:notice] %>
+                        <div class="alert alert-success">
+                            <%= flash[:notice] %>
+                        </div>
+                    <% elsif flash[:error] %>
+                        <div class="alert alert-danger">
+                            <%= flash[:error] %>
+                        </div>
+                    <% end %>
+                    </div>
                     <%= yield %>
                 </div>
             </div>

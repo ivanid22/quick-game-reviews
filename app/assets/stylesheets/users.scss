@@ -1,3 +1,28 @@
 // Place all the styles related to the Users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+@import './vars';
+
+.user-text-field {
+  padding: 5px;
+  border: 1px solid $color-5;
+}
+
+.user-submit {
+  max-width: 100px;
+  margin-top: 5px;
+  align-self: center;
+}
+
+.user-title {
+  align-self: center;
+}
+
+.user-form {
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+    align-self: center;
+    padding: 20px;
+  }
