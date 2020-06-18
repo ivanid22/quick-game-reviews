@@ -1,1 +1,32 @@
-<h2>Welcome <%= @user.Username %></h2>
+<div class="row user-page__top-row">
+    <div class="user-page__cover-picture-container col-9">
+        <img src="<%= url_for(@user.cover_picture) %>" alt="" class="user-page__cover-picture img-fluid thin-border">
+    </div>
+    <div class="user-page__info-container col-3">
+        <div class="row user-page__avatar-row">
+            <%= render partial: 'partials/users/follow_user_button', locals: { user: @user } %>
+            <%= render partial: 'partials/users/user_avatar_image', locals: { user: @user } %>
+            <div class="user-page__user-action-button">
+                <i class="fas fa-list fa-xl"></i>
+            </div>
+        </div>
+        <div class="row user-page__user-name-container">
+            <span class="user-page__user-name bold"> <%= @user.Username %> </span>
+            <span class="user-page__full-user-name"> <%= @user.FullName %> </span>
+        </div>
+        <div class="row user-page__statistics-container">
+            <div class="user-page__statistics-item-container">
+                <span class="bold"> <%= @user.game_reviews.count %> </span>
+                <span>Reviews</span>
+            </div>
+            <div class="user-page__statistics-item-container">
+                <span class="bold"> <%= @user.followed.count %> </span>
+                <span>Following</span>
+            </div>
+            <div class="user-page__statistics-item-container">
+                <span class="bold"> <%= @user.followers.count %> </span>
+                <span>Followers</span>
+            </div>
+        </div>
+    </div>
+</div>

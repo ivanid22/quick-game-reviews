@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  skip_before_action :check_authentication, only: [:sign_in_view, :sign_in]
+  skip_before_action :check_authentication, only: [:sign_in_view, :sign_in, :new, :create]
 
   def new
       @user = User.new
@@ -13,7 +13,9 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       flash[:notice] = "User successfully created"
-      redirect_to new_user_path
+      session[:logged_in_user_name] = @user.Username
+      session[:logged_in_user_id] = @user.id
+      redirect_to user_path(@user)
     else
       flash[:error] = "Something went wrong"
       render 'new'
@@ -45,7 +47,7 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:Username, :FullName)
+    params.require(:user).permit(:Username, :FullName, :avatar, :cover_picture)
   end
 
 end

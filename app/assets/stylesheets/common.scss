@@ -1,2 +1,10 @@
 @import './vars';
 
+.bold {
+  font-weight: 700;
+  color: $color-3;
+}
+
+.thin-border {
+  border: 1px solid $color-5;
+}
