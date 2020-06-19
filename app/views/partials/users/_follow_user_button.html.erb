@@ -1,5 +1,9 @@
-<% if session[:logged_in_user_id] && (session[:logged_in_user_id] != user.id) && (!User.find(session[:logged_in_user_id]).followed.include? user) %>
-    <a class="user-page__user-action-button" href="#" >
+<% if session[:logged_in_user_id] && (session[:logged_in_user_id] != user.id) && (!logged_in_user.followed.include? user) %>
+    <a class="user-page__user-action-button" href="<%= follow_user_path(user) %>" >
         <i class="fas fa-user-plus fa-xl"></i>
+    </a>
+<% elsif session[:logged_in_user_id] && (logged_in_user.followed.include? user)%>
+    <a class="user-page__user-action-button" href="<%= unfollow_user_path(user) %>" >
+        <i class="fas fa-times fa-xl"></i>
     </a>
 <% end %>

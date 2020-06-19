@@ -1,10 +1,13 @@
 <div class="who-to-follow__item align-items-center">
-    <div class="who-to-follow__item__avatar-container">
-        <img src="<%= user_avatar_image_url(user) %>" alt="" class="img-fluid who-to-follow__item__avatar-container__image">
+    <div class="d-flex flex-row align-items-center">
+        <div class="who-to-follow__item__avatar-container">
+            <img src="<%= user_avatar_image_url(user) %>" alt="" class="img-fluid who-to-follow__item__avatar-container__image">
+        </div>
+            <div class="who-to-follow__item__name__container d-flex flex-column justify-self-start">
+            <span class="bold"> <%= user.FullName %> </span>
+            <span> <%= user.Username %> </span>
+        </div>
     </div>
-    <div class="who-to-follow__item__name__container d-flex flex-column justify-self-start">
-        <span class="bold"> <%= user.FullName %> </span>
-        <span> <%= user.Username %> </span>
-    </div>
+    
     <%= render partial: 'partials/users/follow_user_button', locals: {user: user} %>
 </div>
