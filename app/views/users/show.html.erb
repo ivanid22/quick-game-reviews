@@ -6,9 +6,7 @@
         <div class="row user-page__avatar-row">
             <%= render partial: 'partials/users/follow_user_button', locals: { user: @user } %>
             <%= render partial: 'partials/users/user_avatar_image', locals: { user: @user } %>
-            <div class="user-page__user-action-button">
-                <i class="fas fa-list fa-xl"></i>
-            </div>
+            <%= render partial: 'partials/users/user_options_button', locals: { user: @user } %>
         </div>
         <div class="row user-page__user-name-container">
             <span class="user-page__user-name bold"> <%= @user.Username %> </span>
@@ -26,6 +24,21 @@
             <div class="user-page__statistics-item-container">
                 <span class="bold"> <%= @user.followers.count %> </span>
                 <span>Followers</span>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row user-page__bottom-row">
+    <div class="user-page__reviews-section col-9">
+        <h1>placeholder</h1>
+    </div>
+    <div class="user-page__extra-section col-3">
+        <div class="extra-section__subsection">
+            <div class="subsection__title">
+                <span>followed by</span>
+            </div>
+            <div class="subsection__content">
+                <%= render partial: 'partials/users/followed_by_list', locals: { user: @user } %>
             </div>
         </div>
     </div>

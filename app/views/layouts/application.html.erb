@@ -21,17 +21,7 @@
                   <h3>top bar</h3>
                 </div>
                 <div class="main-content row">
-                    <div class="messages row">
-                    <% if flash[:notice] %>
-                        <div class="alert alert-success">
-                            <%= flash[:notice] %>
-                        </div>
-                    <% elsif flash[:error] %>
-                        <div class="alert alert-danger">
-                            <%= flash[:error] %>
-                        </div>
-                    <% end %>
-                    </div>
+                    <%= render partial: 'partials/common/notices' %>
                     <%= yield %>
                 </div>
             </div>

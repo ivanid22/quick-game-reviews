@@ -1,0 +1,4 @@
+<% user_list = session[:logged_in_user_id] ? User.find(session[:logged_in_user_id]).followable : User.all %>
+<% user_list.each do |user| %>
+  <%= render partial: '/partials/users/who_to_follow_list_item', locals: { user: user } %>
+<% end %>

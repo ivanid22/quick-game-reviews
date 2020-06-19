@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  skip_before_action :check_authentication, only: [:sign_in_view, :sign_in, :new, :create]
+  skip_before_action :check_authentication, only: [:sign_in_view, :sign_in, :new, :create, :show]
 
   def new
       @user = User.new

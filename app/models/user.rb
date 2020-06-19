@@ -18,4 +18,16 @@ class User < ApplicationRecord
   validates :avatar, presence: true
   validates :cover_picture, presence: true
   
+  def followable
+    User.all.select do |u|
+      (u != self) && (!self.followed.include? u)
+    end
+  end
+
+  def followed_by
+    User.all.includes(:followed).select do |u|
+      u.followed.include? self
+    end
+  end
+
 end

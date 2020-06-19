@@ -1,0 +1,3 @@
+<% user.followers.each do |u| %>
+  <%= render partial: '/partials/users/who_to_follow_list_item', locals: { user: u } %>
+<% end %>

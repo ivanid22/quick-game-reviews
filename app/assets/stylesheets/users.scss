@@ -94,3 +94,45 @@
   flex-direction: column;
   align-items: center;
 }
+
+.user-page__extra-section > div {
+  padding: .5em 1.9em;
+}
+
+.user-page__extra-section {
+  display: flex;
+  flex-direction: column;
+}
+
+.extra-section__subsection {
+  display: flex;
+  flex-direction: column;
+}
+
+.subsection__title > span {
+  text-transform: uppercase;
+}
+
+.subsection__content {
+  flex-direction: column;
+}
+
+.who-to-follow__item {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: .8em;
+}
+
+.who-to-follow__item__avatar-container {
+  height: 75px;
+  width: 75px;
+}
+
+.who-to-follow__item__avatar-container__image {
+  height: 100%;
+  border-radius: 50%;
+}
+
+.who-to-follow__item__name__container {
+  text-align: right;
+}
