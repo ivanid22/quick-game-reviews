@@ -23,11 +23,31 @@ body > div:first-child,
 
 .sidebar {
   background-color: $color-3;
-  color: $color-2;
+  color: $color-4;
+}
+
+.sidebar .bold {
+  color: $color-4;
+}
+
+.top-bar > h1 {
+  text-transform: uppercase;
+  padding: 0 .5em;
 }
 
 .top-bar {
-  background-color: $color-1;
+  display: flex;
+  color: $color-6;
+  align-items: center;
+  padding: .8em .3em;
+  background: rgb(5,173,232);
+  background: linear-gradient(90deg, rgba(5,173,232,1) 0%, rgba(9,161,216,1) 100%);
+  min-height: 75px;
+}
+
+.name-span {
+  font-size: 1.2rem;
+  text-transform: uppercase;
 }
 
 .main-content {
@@ -44,4 +64,62 @@ body > div:first-child,
   padding: 1.5em;
   background-color: white;
   border-radius: .6em;
+}
+
+.user-info-pic {
+  margin-top: 15px;
+  margin-left: 30px;
+  margin-right: .3em;
+  height: 75px;
+  width: 75px;
+}
+
+.user-info-pic > img {
+  height: 100%;
+  border-radius: .5em;
+}
+
+.user-info__detail > 
+h3,
+h4 {
+  font-size: 1em;
+}
+
+.user-info__detail:last-child {
+  
+}
+
+.detail-data {
+  color: $color-5;
+  font-weight: 700;
+}
+
+.sidebar__logged-in-user-info > div {
+  align-items: center;
+}
+
+.sidebar__logged-in-user-info__first-row {
+  margin-bottom: 2em;
+}
+
+.sidebar__logged-in-user-info__second-row > div {
+  align-items: center;
+}
+
+.sidebar-nav {
+  margin-top: 2em;
+  margin-left: 1em;
+}
+
+.sidebar-nav-item {
+  margin-top: 1em;
+  align-items: center;
+  text-transform: uppercase;
+  font-size: 1.5em;
+}
+
+.sidebar-nav-item > a {
+  text-decoration: none;
+  color: $color-4;
+  margin-left: .3em;
 }

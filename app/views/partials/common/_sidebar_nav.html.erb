@@ -1,0 +1,26 @@
+<div class="row sidebar-nav d-flex flex-column">
+    <div class="row sidebar-nav-item">
+        <i class="fas fa-home"></i>
+        <a href="#">Home</a>
+    </div>
+    <div class="row sidebar-nav-item">
+        <i class="fas fa-newspaper"></i>
+        <a href="#">Reviews</a>
+    </div>
+    <% if session[:logged_in_user_id] %>
+    <div class="row sidebar-nav-item">
+        <i class="fas fa-user"></i>
+        <a href="#">Profile</a>
+    </div>
+    <div class="row sidebar-nav-item">
+        <i class="fas fa-user"></i>
+        <a href="#">Sign out</a>
+    </div>
+    <% elsif %>
+    <div class="row sidebar-nav-item">
+        <i class="fas fa-user"></i>
+        <a href="#">Sign in</a>
+    </div>
+    <% end %>
+
+</div>

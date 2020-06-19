@@ -1,0 +1,20 @@
+<% if session[:logged_in_user_id] %>
+<div class="row sidebar__logged-in-user-info d-flex flex-column">
+    <div class="row sidebar__logged-in-user-info__first-row d-flex">
+        <div class="user-info-pic">
+            <img src="<%= user_avatar_image_url(logged_in_user) %>" alt="User avatar" class="img-fluid user-info-pic__image">
+        </div>
+        <span class="bold name-span"> <%= logged_in_user.FullName %> </span>
+    </div>
+    <div class="row sidebar__logged-in-user-info__second-row d-flex">
+        <div class="col-6 user-info__detail d-flex flex-column">
+            <h3 class="detail-data"><%= logged_in_user.followed.count %></h3>
+            <h4 class="detail-title">Following</h4>
+        </div>
+        <div class="col-6 user-info__detail d-flex flex-column">
+            <h3 class="detail-data"><%= logged_in_user.followers.count %></h3>
+            <h4 class="detail-title">Followers</h4>
+        </div>
+    </div>
+</div>
+<% end %>
