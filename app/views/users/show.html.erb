@@ -1,5 +1,5 @@
 <div class="row user-page__top-row">
-    <div class="user-page__cover-picture-container col-9">
+    <div class="user-page__cover-picture-container tb-r col-9">
         <img src="<%= url_for(@user.cover_picture) %>" alt="" class="user-page__cover-picture img-fluid thin-border">
     </div>
     <div class="user-page__info-container col-3">
@@ -12,8 +12,8 @@
             <span class="user-page__user-name bold"> <%= @user.Username %> </span>
             <span class="user-page__full-user-name"> <%= @user.FullName %> </span>
         </div>
-        <div class="row user-page__statistics-container">
-            <div class="user-page__statistics-item-container">
+        <div class="row user-page__statistics-container tb-t tb-b">
+            <div class="user-page__statistics-item-container tb-r">
                 <span class="bold"> <%= @user.game_reviews.count %> </span>
                 <span>Reviews</span>
             </div>
@@ -21,7 +21,7 @@
                 <span class="bold"> <%= @user.followed.count %> </span>
                 <span>Following</span>
             </div>
-            <div class="user-page__statistics-item-container">
+            <div class="user-page__statistics-item-container tb-l">
                 <span class="bold"> <%= @user.followers.count %> </span>
                 <span>Followers</span>
             </div>
@@ -29,12 +29,13 @@
     </div>
 </div>
 <div class="row user-page__bottom-row">
-    <div class="user-page__reviews-section col-9">
-        <h1>placeholder</h1>
+    <div class="user-page__reviews-section col-9 tb-r">
+        <h2>Game reviews</h2>
+        <%= render partial: 'partials/game_reviews/game_reviews_list', locals: { game_reviews: @user.game_reviews } %>
     </div>
     <div class="user-page__extra-section col-3">
         <div class="extra-section__subsection">
-            <div class="subsection__title">
+            <div class="subsection__title tb-b">
                 <span>followed by</span>
             </div>
             <div class="subsection__content">

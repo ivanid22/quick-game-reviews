@@ -95,18 +95,19 @@
   align-items: center;
 }
 
-.user-page__extra-section > div {
-  padding: .5em 1.9em;
-}
-
 .user-page__extra-section {
   display: flex;
+  height: 100%;
   flex-direction: column;
 }
 
 .extra-section__subsection {
   display: flex;
   flex-direction: column;
+}
+
+.subsection__title {
+  padding: 2em 0;
 }
 
 .subsection__title > span {

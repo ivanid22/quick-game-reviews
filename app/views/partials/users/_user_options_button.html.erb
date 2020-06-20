@@ -1,4 +1,4 @@
-<% if session[:logged_in_user_id] && (session[:logged_in_user_id] != user.id) && (!User.find(session[:logged_in_user_id]).followed.include? user) %>
+<% if session[:logged_in_user_id] && user.id != session[:logged_in_user_id] %>
     <a class="user-page__user-action-button" href="#" >
         <i class="fas fa-list fa-xl"></i>
     </a>

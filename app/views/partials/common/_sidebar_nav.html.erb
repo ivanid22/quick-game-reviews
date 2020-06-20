@@ -10,16 +10,16 @@
     <% if session[:logged_in_user_id] %>
     <div class="row sidebar-nav-item">
         <i class="fas fa-user"></i>
-        <a href="#">Profile</a>
+        <%= link_to "Profile", user_path(User.find(session[:logged_in_user_id])) %>
     </div>
     <div class="row sidebar-nav-item">
         <i class="fas fa-user"></i>
-        <a href="#">Sign out</a>
+        <%= link_to "Sign out", sign_out_path %>
     </div>
     <% elsif %>
     <div class="row sidebar-nav-item">
         <i class="fas fa-user"></i>
-        <a href="#">Sign in</a>
+        <%= link_to "Sign in", sign_in_path %>
     </div>
     <% end %>
 

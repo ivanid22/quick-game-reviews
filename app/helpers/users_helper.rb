@@ -1,6 +1,10 @@
 module UsersHelper
     def sign_in_path
-      '/sign-in'
+      '/sign_in'
+    end
+
+    def sign_out_path
+      '/sign_out'
     end
 
     def user_avatar_image_url(user)

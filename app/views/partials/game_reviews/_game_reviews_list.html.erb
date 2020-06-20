@@ -1,0 +1,5 @@
+<% game_reviews.each do |review| %>
+  <div class="row justify-content-center">
+    <%= render partial: 'partials/game_reviews/game_reviews_list_item', locals: { game_review: review } %>
+  </div>
+<% end %>
