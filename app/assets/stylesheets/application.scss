@@ -12,18 +12,10 @@ body {
   background-color: $color-2;
 }
 
-html,
-body,
-body > div:first-child,
-.top-container,
-.sidebar {
-  height: 100%;
-}
-
-
 .sidebar {
   background-color: $color-3;
   color: $color-4;
+  min-height: 100vh;
 }
 
 .sidebar .bold {
