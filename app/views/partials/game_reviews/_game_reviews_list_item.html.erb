@@ -3,8 +3,12 @@
         <span> <%= game_review.title %> </span>
     </div>
     <div class="game-review-text">
-        <textarea name="review-text" id="" cols="75" rows="5" class="form-control disabled">
+        <textarea name="review-text" id="" cols="75" rows="5" class="form-control" disabled>
             <%= game_review.Text %>
         </textarea>
+    </div>
+    <div class="game-review-likes-container">
+        <%= render partial: 'partials/likes/like_button', locals: {review: game_review} %>
+        <span class="likes-count"><%= game_review.likes.count %> likes</span>
     </div>
 </div>

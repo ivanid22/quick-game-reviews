@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_06_20_172935) do
+ActiveRecord::Schema.define(version: 2020_06_20_192103) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -51,6 +51,13 @@ ActiveRecord::Schema.define(version: 2020_06_20_172935) do
     t.string "title", null: false
   end
 
+  create_table "likes", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "game_review_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "Username"
     t.string "FullName"
@@ -62,4 +69,6 @@ ActiveRecord::Schema.define(version: 2020_06_20_172935) do
   add_foreign_key "followings", "users", column: "FollowedId", on_delete: :cascade
   add_foreign_key "followings", "users", column: "FollowerId", on_delete: :cascade
   add_foreign_key "game_reviews", "users", column: "AuthorId", on_delete: :cascade
+  add_foreign_key "likes", "game_reviews", on_delete: :cascade
+  add_foreign_key "likes", "users", on_delete: :cascade
 end

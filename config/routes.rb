@@ -6,5 +6,6 @@ Rails.application.routes.draw do
   get '/sign_out', to: 'users#sign_out'
   get '/follow/:id', to: 'followings#follow_user'
   get '/unfollow/:id', to: 'followings#unfollow_user'
+  get '/like/:id', to: 'likes#like'
   root to: "users#new"
 end
