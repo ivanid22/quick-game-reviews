@@ -8,5 +8,8 @@ module ApplicationHelper
     nil
   end
 
- 
+  def home_path
+    '/home'
+  end
+  
 end

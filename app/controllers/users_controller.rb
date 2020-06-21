@@ -43,6 +43,11 @@ class UsersController < ApplicationController
     session[:logged_in_user_name] = nil
     redirect_to sign_in_path
   end
+
+  def home
+    @new_review = GameReview.new
+    render :home
+  end
   
   private
 

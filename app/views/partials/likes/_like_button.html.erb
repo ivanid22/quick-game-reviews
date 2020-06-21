@@ -1,4 +1,4 @@
-<% if review.likes.all.where(user: logged_in_user).empty? %>
+<% if review.likes.all.includes(:user).where(user: logged_in_user).empty? %>
   <a href="<%= like_path(review) %>" class="btn-btn-secondary like-button">
     <i class="fas fa-thumbs-up"></i>
   </a>
