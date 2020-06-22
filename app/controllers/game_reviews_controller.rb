@@ -1,11 +1,10 @@
 class GameReviewsController < ApplicationController
     def create
         @game_review = GameReview.new(game_review_params)
-        begin
-          @game_review.save
-          flash[:notice] = "GameReview successfully created"
-        rescue Exception => e
-          flash[:error] = "Error creating review: #{e.message}"
+        if @game_review.save
+          flash[:notice] = "Game Review successfully created"
+        else
+          flash[:error] = "Error creating review. Please fill in both fields"
         end
         redirect_to request.referer
     end
