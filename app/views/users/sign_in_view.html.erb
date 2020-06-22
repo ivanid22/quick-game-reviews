@@ -4,3 +4,7 @@
 <%= text_field_tag (:Username), nil, class: 'user-text-field' %>
 <%= submit_tag "Sign in", class: 'user-submit btn btn-primary' %>
 <% end %>
+<div class="group user-form ta-c">
+    <span>Need an account? </span>
+    <%= link_to "Sign up", new_user_path %>
+</div>

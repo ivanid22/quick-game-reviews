@@ -15,8 +15,6 @@ class User < ApplicationRecord
 
   validates :Username, presence: true, uniqueness: { case_sensitive: false }, length: {maximum: 15}, format: { with: VALID_USERNAME_REGEX }
   validates :FullName, presence: true, length: {maximum: 50}
-  validates :avatar, presence: true
-  validates :cover_picture, presence: true
   
   def followable
     User.all.select do |u|

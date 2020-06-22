@@ -1,6 +1,6 @@
 <div class="row user-page__top-row">
     <div class="user-page__cover-picture-container tb-r col-9">
-        <img src="<%= url_for(@user.cover_picture) %>" alt="" class="user-page__cover-picture img-fluid thin-border">
+        <img src="<%= user_cover_picture_url(@user) %>" alt="" class="user-page__cover-picture img-fluid thin-border">
     </div>
     <div class="user-page__info-container col-3">
         <div class="row user-page__avatar-row">
