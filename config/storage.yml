@@ -12,7 +12,7 @@ amazon:
   access_key_id: ENV['AWS_ACCESS_KEY_ID']
   secret_access_key: ENV['AWS_SECRET_ACCESS_KEY']
   region: sa-east-1
-  bucket: quick-game-reviews-bucket
+  bucket: ENV['AWS_BUCKET_NAME']
 
 # Remember not to checkin your GCS keyfile to a repository
 # google:
