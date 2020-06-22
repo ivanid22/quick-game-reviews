@@ -14,7 +14,7 @@ class User < ApplicationRecord
   has_many :followed, class_name: "User", through: :outgoing_followings, foreign_key: "FollowerId"
 
   validates :Username, presence: true, uniqueness: { case_sensitive: false }, length: {maximum: 15}, format: { with: VALID_USERNAME_REGEX }
-  validates :FullName, presence: true, length: {maximum: 50}
+  validates :FullName, presence: true, length: {maximum: 50}, format: { with: VALID_FULL_NAME_REGEX }
   
   def followable
     User.all.select do |u|
