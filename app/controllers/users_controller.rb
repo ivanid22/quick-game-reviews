@@ -17,7 +17,7 @@ class UsersController < ApplicationController
       session[:logged_in_user_id] = @user.id
       redirect_to user_path(@user)
     else
-      flash[:error] = "Something went wrong"
+      flash[:error] = "User creation failed"
       render 'new'
     end
   end
@@ -31,7 +31,8 @@ class UsersController < ApplicationController
     if @user
       session[:logged_in_user_name] = @user.Username
       session[:logged_in_user_id] = @user.id
-      redirect_to user_path(@user)
+      flash[:notice] = "You are now logged in"
+      redirect_to home_path
     else
       flash[:error] = "User not found"
       render 'sign_in_view'

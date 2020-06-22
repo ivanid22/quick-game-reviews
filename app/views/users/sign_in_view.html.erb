@@ -1,5 +1,5 @@
 <h2 class="user-title">Sign in</h2>
-<%= form_tag( '/sign_in', class: 'user-form group', method: :post) do |f| %>
+<%= form_tag( '/sign_in', class: 'user-form group', id: 'sign-in-form' , method: :post) do |f| %>
 <%= label_tag (:Username) %>
 <%= text_field_tag (:Username), nil, class: 'user-text-field' %>
 <%= submit_tag "Sign in", class: 'user-submit btn btn-primary' %>

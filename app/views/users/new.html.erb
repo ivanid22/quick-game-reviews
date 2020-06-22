@@ -2,7 +2,7 @@
 <%= form_for @user, html: {class: 'user-form group'} do |f| %>
   <%= f.label :Username, "Username" %>
   <%= f.text_field :Username, class: "user-text-field" %>
-  <%= f.label :FullName, "FullName" %>
+  <%= f.label :FullName, "Full Name" %>
   <%= f.text_field :FullName, class: "user-text-field" %>
   <%= f.label :avatar, "Profile picture" %>
   <%= f.file_field :avatar, accept: 'image/png,image/gif,image/jpeg' %>
