@@ -1,5 +1,4 @@
 class FollowingsController < ApplicationController
-
   def unfollow_user
     current_user = User.find(session[:logged_in_user_id])
     target_user = User.find(params[:id])
@@ -7,7 +6,7 @@ class FollowingsController < ApplicationController
     begin
       Following.destroy(unfollowing.id)
       flash[:notice] = "No longer following #{target_user.Username}"
-    rescue Exception => e
+    rescue StandardError => e
       flash[:error] = "Error: #{e.message}"
     end
     redirect_to request.referer
@@ -18,7 +17,7 @@ class FollowingsController < ApplicationController
     if following.persisted?
       flash[:notice] = "Now following #{following.followed.Username}"
     else
-      flash[:error] = "Could not follow user"
+      flash[:error] = 'Could not follow user'
     end
     redirect_to request.referer
   end
