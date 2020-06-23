@@ -26,16 +26,16 @@ body {
 
 .top-bar > h1 {
   text-transform: uppercase;
-  padding: 0 .5em;
+  padding: 0 0.5em;
 }
 
 .top-bar {
   display: flex;
   color: $color-6;
   align-items: center;
-  padding: .8em .3em;
-  background: rgb(5,173,232);
-  background: linear-gradient(90deg, rgba(5,173,232,1) 0%, rgba(9,161,216,1) 100%);
+  padding: 0.8em 0.3em;
+  background: rgb(5, 173, 232);
+  background: linear-gradient(90deg, rgba(5, 173, 232, 1) 0%, rgba(9, 161, 216, 1) 100%);
   min-height: 75px;
 }
 
@@ -57,30 +57,25 @@ body {
 .group {
   padding: 1.5em;
   background-color: white;
-  border-radius: .6em;
+  border-radius: 0.6em;
 }
 
 .user-info-pic {
   margin-top: 15px;
   margin-left: 30px;
-  margin-right: .3em;
+  margin-right: 0.3em;
   height: 75px;
   width: 75px;
 }
 
 .user-info-pic > img {
   height: 100%;
-  border-radius: .5em;
+  border-radius: 0.5em;
 }
 
-.user-info__detail > 
-h3,
+.user-info__detail > h3,
 h4 {
   font-size: 1em;
-}
-
-.user-info__detail:last-child {
-  
 }
 
 .detail-data {
@@ -114,5 +109,5 @@ h4 {
 .sidebar-nav-item > a {
   text-decoration: none;
   color: $color-4;
-  margin-left: .3em;
+  margin-left: 0.3em;
 }
