@@ -8,7 +8,7 @@ module UsersHelper
     end
 
     def user_avatar_image_url(user)
-      user.avatar.attached? ? url_for(user.avatar) : '/images/default_profile.png'
+      user.avatar.attached? ? url_for(user.avatar) : asset_url('default_profile.jpg')
     end
 
     def logged_in_user
@@ -16,6 +16,6 @@ module UsersHelper
     end
 
     def user_cover_picture_url(user)
-      user.cover_picture.attached? ? url_for(user.cover_picture) : '/images/default_cover.jpg'
+      user.cover_picture.attached? ? url_for(user.cover_picture) : asset_url('default_cover.jpg')
     end
 end
