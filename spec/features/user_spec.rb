@@ -29,8 +29,8 @@ describe 'user creation', type: :feature do
   it 'should create a user' do
     visit '/users/new'
     within('#new_user') do
-      fill_in 'Username',	with: 'username'
-      fill_in 'Full Name',	with: 'User Name'
+      fill_in 'Username', with: 'username'
+      fill_in 'Full Name', with: 'User Name'
     end
     click_button 'Sign up'
     expect(page).to have_content 'User successfully created'
@@ -39,7 +39,7 @@ describe 'user creation', type: :feature do
   it 'should fail to create a user when the username field is empty' do
     visit '/users/new'
     within('#new_user') do
-      fill_in 'Full Name',	with: 'User Name'
+      fill_in 'Full Name', with: 'User Name'
     end
     click_button 'Sign up'
     expect(page).to have_content 'User creation failed'
@@ -48,7 +48,7 @@ describe 'user creation', type: :feature do
   it 'should fail to create a user when the full name field is empty' do
     visit '/users/new'
     within('#new_user') do
-      fill_in 'Username',	with: 'username'
+      fill_in 'Username', with: 'username'
     end
     click_button 'Sign up'
     expect(page).to have_content 'User creation failed'
