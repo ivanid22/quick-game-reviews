@@ -4,7 +4,7 @@ module LikesHelper
   end
 
   def like_button(review)
-    not_liked = review.likes.all.includes(:user).where(user: logged_in_user).empty?
-    return "<a href=#{like_path(review)} class=like-button><i class=fas fa-thumbs-up></i></a>".html_safe if not_liked
+    nl = review.likes.all.includes(:user).where(user: logged_in_user).empty?
+    return "<a href=#{like_path(review)} class=like-button><i class=\"fas fa-thumbs-up\"></i></a>".html_safe if nl
   end
 end

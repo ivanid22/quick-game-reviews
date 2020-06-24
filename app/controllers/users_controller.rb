@@ -16,7 +16,7 @@ class UsersController < ApplicationController
       flash[:notice] = 'User successfully created'
       session[:logged_in_user_name] = @user.Username
       session[:logged_in_user_id] = @user.id
-      redirect_to request.referer
+      redirect_to home_path
     rescue StandardError => e
       flash[:error] = e.message
       render 'new'
