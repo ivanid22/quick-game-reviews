@@ -50,8 +50,10 @@ body {
 }
 
 .messages {
+  display: flex;
   margin-top: 10px;
   justify-content: center;
+  width: auto;
 }
 
 .group {

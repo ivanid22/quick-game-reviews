@@ -6,7 +6,7 @@
     <% if session[:logged_in_user_id] %>
     <div class="row sidebar-nav-item">
         <i class="fas fa-user"></i>
-        <%= link_to "Profile", user_path(User.find(session[:logged_in_user_id])) %>
+        <%= link_to "Profile", user_path(logged_in_user) %>
     </div>
     <div class="row sidebar-nav-item">
         <i class="fas fa-user"></i>
