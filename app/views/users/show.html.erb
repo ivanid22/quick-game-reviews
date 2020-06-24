@@ -6,7 +6,7 @@
         <div class="row user-page__avatar-row">
             <%= follow_user_button(@user) %>
             <%= render partial: 'partials/users/user_avatar_image', locals: { user: @user } %>
-            <%= render partial: 'partials/users/user_options_button', locals: { user: @user } %>
+            <%= user_options_button(@user) %>
         </div>
         <div class="row user-page__user-name-container">
             <span class="user-page__user-name bold"> <%= @user.Username %> </span>
