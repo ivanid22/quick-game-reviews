@@ -11,13 +11,14 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(user_params)
-    if @user.save
+    begin
+      @user.save!
       flash[:notice] = 'User successfully created'
       session[:logged_in_user_name] = @user.Username
       session[:logged_in_user_id] = @user.id
-      redirect_to user_path(@user)
-    else
-      flash[:error] = 'User creation failed'
+      redirect_to request.referer
+    rescue StandardError => e
+      flash[:error] = "#{e.message}"
       render 'new'
     end
   end
