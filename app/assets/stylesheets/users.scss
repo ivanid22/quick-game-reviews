@@ -61,6 +61,25 @@
   color: lightgray;
 }
 
+.follow-b {
+  height: 40px;
+  margin: 0 0.9em;
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+}
+
+.follow-b:hover {
+  text-decoration: none;
+}
+
+.follow-b > i {
+  padding: 10px;
+  border: 1px solid lightgray;
+  border-radius: 50%;
+  color: lightgray;
+}
+
 .user-page__user-avatar-image-container {
   width: 130px;
   height: 130px;

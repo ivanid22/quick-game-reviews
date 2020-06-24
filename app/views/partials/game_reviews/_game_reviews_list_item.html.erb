@@ -9,7 +9,7 @@
         </textarea>
     </div>
     <div class="game-review-likes-container">
-        <%= render partial: 'partials/likes/like_button', locals: {review: game_review} %>
+        <%= like_button(game_review) %>
         <span class="likes-count"><%= game_review.likes.count %> likes</span>
     </div>
 </div>

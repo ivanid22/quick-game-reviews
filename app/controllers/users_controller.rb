@@ -18,7 +18,7 @@ class UsersController < ApplicationController
       session[:logged_in_user_id] = @user.id
       redirect_to request.referer
     rescue StandardError => e
-      flash[:error] = "#{e.message}"
+      flash[:error] = e.message
       render 'new'
     end
   end

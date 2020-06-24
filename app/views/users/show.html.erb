@@ -4,7 +4,7 @@
     </div>
     <div class="user-page__info-container col-3">
         <div class="row user-page__avatar-row">
-            <%= render partial: 'partials/users/follow_user_button', locals: { user: @user } %>
+            <%= follow_user_button(@user) %>
             <%= render partial: 'partials/users/user_avatar_image', locals: { user: @user } %>
             <%= render partial: 'partials/users/user_options_button', locals: { user: @user } %>
         </div>
