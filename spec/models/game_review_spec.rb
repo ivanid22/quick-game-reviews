@@ -22,4 +22,18 @@ RSpec.describe GameReview, type: :model do
     review.save
     expect(review.persisted?).to be(false)
   end
+
+  it 'should return the review\'s author' do
+    review = GameReview.create(author: User.first, title: 'test', Text: 'test')
+    expect(review.author).to eql(User.first)
+  end
+
+  it 'should return the correct number of likes for a game_review' do
+    review = GameReview.create(author: User.first, title: 'test title', Text: 'test text')
+    User.create(Username: 'second', FullName: 'second user')
+    User.create(Username: 'third', FullName: 'third user')
+    Like.create(user: User.find_by(Username: 'second'), game_review: review)
+    Like.create(user: User.find_by(Username: 'third'), game_review: review)
+    expect(review.likes.count).to eql(2)
+  end
 end

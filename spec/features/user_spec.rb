@@ -42,7 +42,7 @@ describe 'user creation', type: :feature do
       fill_in 'Full Name', with: 'User Name'
     end
     click_button 'Sign up'
-    expect(page).to have_content 'User creation failed'
+    expect(page).to have_content 'Username can\'t be blank'
   end
 
   it 'should fail to create a user when the full name field is empty' do
@@ -51,6 +51,6 @@ describe 'user creation', type: :feature do
       fill_in 'Username', with: 'username'
     end
     click_button 'Sign up'
-    expect(page).to have_content 'User creation failed'
+    expect(page).to have_content 'Fullname can\'t be blank'
   end
 end

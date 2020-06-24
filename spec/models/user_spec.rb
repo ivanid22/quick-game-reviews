@@ -5,6 +5,12 @@ RSpec.describe User, type: :model do
     User.create(Username: 'first', FullName: 'First User')
     User.create(Username: 'second', FullName: 'Second User')
     User.create(Username: 'third', FullName: 'Third User')
+    GameReview.create(author: User.first, Text: 'first test text', title: 'first test title')
+    GameReview.create(author: User.first, Text: 'second test text', title: 'second test title')
+    Following.create(follower: User.first, followed: User.last)
+    Following.create(follower: User.first, followed: User.find_by(Username: 'second'))
+    Following.create(follower: User.last, followed: User.first)
+    Following.create(follower: User.find_by(Username: 'second'), followed: User.first)
   end
 
   it 'should fail to create a user with an invalid username' do
@@ -49,5 +55,27 @@ RSpec.describe User, type: :model do
     Following.create(follower: User.find_by(Username: 'second'), followed: new_user)
     Following.create(follower: User.find_by(Username: 'third'), followed: new_user)
     expect(new_user.followed_by.count).to eql(3)
+  end
+
+  it 'should return the user\'s reviews' do
+    expect(User.first.game_reviews.count).to eql(2)
+  end
+
+  it 'should return the user\'s incoming_followings' do
+    expect(User.first.incoming_followings.count).to eql(2)
+  end
+
+  it 'should return the user\'s outgoing_followings' do
+    expect(User.first.outgoing_followings.count).to eql(2)
+  end
+
+  it 'should return the user\'s followers' do
+    both = User.first.followers.include?(User.find_by(Username: 'second')) && User.first.followers.include?(User.last)
+    expect(both).to be(true)
+  end
+
+  it 'should return the user\'s followed users' do
+    both = User.first.followed.include?(User.find_by(Username: 'second')) && User.first.followers.include?(User.last)
+    expect(both).to be(true)
   end
 end
