@@ -1,0 +1,15 @@
+<div class="game-reviews-list-item group d-flex flex-column mb-3">
+    <div class="game-review-title">
+        <span class="bold"> <%= game_review.title %>, </span>
+        <span>by <%= game_review.author.FullName %></span>
+    </div>
+    <div class="game-review-text">
+        <textarea name="review-text" id="" cols="75" rows="5" class="form-control" disabled>
+            <%= game_review.Text %>
+        </textarea>
+    </div>
+    <div class="game-review-likes-container">
+        <%= like_button(game_review) %>
+        <span class="likes-count"><%= game_review.likes.count %> likes</span>
+    </div>
+</div>

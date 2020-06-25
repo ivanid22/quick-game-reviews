@@ -1,0 +1,115 @@
+@import 'bootstrap/scss/bootstrap';
+@import './users';
+@import './vars';
+@import './common';
+@import './likes';
+@import './game_reviews';
+
+body {
+  font-family: acumin-pro, sans-serif;
+  height: 100%;
+  font-weight: 400;
+  font-style: normal;
+  color: $color-4;
+  background-color: $color-2;
+}
+
+.sidebar {
+  background-color: $color-3;
+  color: $color-4;
+  min-height: 100vh;
+}
+
+.sidebar .bold {
+  color: $color-4;
+}
+
+.top-bar > h1 {
+  text-transform: uppercase;
+  padding: 0 0.5em;
+}
+
+.top-bar {
+  display: flex;
+  color: $color-6;
+  align-items: center;
+  padding: 0.8em 0.3em;
+  background: rgb(5, 173, 232);
+  background: linear-gradient(90deg, rgba(5, 173, 232, 1) 0%, rgba(9, 161, 216, 1) 100%);
+  min-height: 75px;
+}
+
+.name-span {
+  font-size: 1.2rem;
+  text-transform: uppercase;
+}
+
+.main-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.messages {
+  display: flex;
+  margin-top: 10px;
+  justify-content: center;
+  width: auto;
+}
+
+.group {
+  padding: 1.5em;
+  background-color: white;
+  border-radius: 0.6em;
+}
+
+.user-info-pic {
+  margin-top: 15px;
+  margin-left: 30px;
+  margin-right: 0.3em;
+  height: 75px;
+  width: 75px;
+}
+
+.user-info-pic > img {
+  height: 100%;
+  border-radius: 0.5em;
+}
+
+.user-info__detail > h3,
+h4 {
+  font-size: 1em;
+}
+
+.detail-data {
+  color: $color-5;
+  font-weight: 700;
+}
+
+.sidebar__logged-in-user-info > div {
+  align-items: center;
+}
+
+.sidebar__logged-in-user-info__first-row {
+  margin-bottom: 1em;
+}
+
+.sidebar__logged-in-user-info__second-row > div {
+  align-items: center;
+}
+
+.sidebar-nav {
+  margin-left: 1em;
+}
+
+.sidebar-nav-item {
+  margin-top: 1em;
+  align-items: center;
+  text-transform: uppercase;
+  font-size: 1.5em;
+}
+
+.sidebar-nav-item > a {
+  text-decoration: none;
+  color: $color-4;
+  margin-left: 0.3em;
+}

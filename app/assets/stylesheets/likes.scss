@@ -1,0 +1,15 @@
+// Place all the styles related to the Likes controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+@import './vars';
+
+.like-button {
+  color: $color-4;
+  text-decoration: none;
+}
+
+.like-button:hover {
+  color: $color-4;
+  text-decoration: none;
+}

@@ -1,0 +1,46 @@
+<div class="row user-page__top-row">
+    <div class="user-page__cover-picture-container tb-r col-9">
+        <img src="<%= user_cover_picture_url(@user) %>" alt="" class="user-page__cover-picture img-fluid thin-border">
+    </div>
+    <div class="user-page__info-container col-3">
+        <div class="row user-page__avatar-row">
+            <%= follow_user_button(@user) %>
+            <%= render partial: 'partials/users/user_avatar_image', locals: { user: @user } %>
+            <%= user_options_button(@user) %>
+        </div>
+        <div class="row user-page__user-name-container">
+            <span class="user-page__user-name bold"> <%= @user.Username %> </span>
+            <span class="user-page__full-user-name"> <%= @user.FullName %> </span>
+        </div>
+        <div class="row user-page__statistics-container tb-t tb-b">
+            <div class="user-page__statistics-item-container tb-r">
+                <span class="bold"> <%= @user.game_reviews.count %> </span>
+                <span>Reviews</span>
+            </div>
+            <div class="user-page__statistics-item-container">
+                <span class="bold"> <%= @user.followed.count %> </span>
+                <span>Following</span>
+            </div>
+            <div class="user-page__statistics-item-container tb-l">
+                <span class="bold"> <%= @user.followers.count %> </span>
+                <span>Followers</span>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row user-page__bottom-row">
+    <div class="user-page__reviews-section col-9 tb-r">
+        <h2>Game reviews</h2>
+        <%= render partial: 'partials/game_reviews/game_reviews_list', locals: { game_reviews: @user.game_reviews.includes(:author) } %>
+    </div>
+    <div class="user-page__extra-section col-3">
+        <div class="extra-section__subsection">
+            <div class="subsection__title tb-b">
+                <span>followed by</span>
+            </div>
+            <div class="subsection__content">
+                <%= render partial: 'partials/users/followed_by_list', locals: { user: @user } %>
+            </div>
+        </div>
+    </div>
+</div>

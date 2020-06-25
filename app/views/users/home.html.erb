@@ -1,0 +1,24 @@
+<div class="row">
+
+<div class="col-9 home-content d-flex flex-column justify-content-center">
+    <h2 class="bold p-5">Recent reviews</h1>
+    <div class="home-view__recent-reviews-section d-flex flex-column justify-content-center">
+        <%= render partial: 'partials/game_reviews/game_reviews_list', locals: {game_reviews: all_reviews_desc } %>
+    </div>
+    <h2 class="bold p-5">New review</h2>
+    <%= render partial: '/partials/game_reviews/game_review_form', locals: {game_review: @new_review, method: :post, url: game_reviews_path} %>
+</div>
+<div class="col-3 home-right-sidebar tb-l">
+    <div class="user-page__extra-section">
+        <div class="extra-section__subsection">
+            <div class="subsection__title tb-b">
+                <span>who to follow</span>
+            </div>
+            <div class="subsection__content">
+                <%= render partial: 'partials/users/who_to_follow_list', locals: { user: logged_in_user } %>
+            </div>
+        </div>
+    </div>
+</div>
+
+</div>

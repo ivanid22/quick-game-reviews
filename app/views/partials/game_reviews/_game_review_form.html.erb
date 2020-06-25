@@ -1,0 +1,8 @@
+<%= form_for game_review, html: {class: 'user-form review-form group'}, method: method do |f| %>
+  <%= f.label :title, "Title" %>
+  <%= f.text_field :title %>
+  <%= f.label :Text, "Body" %>
+  <%= f.text_area :Text, cols: '75', rows: '5' %>
+  <%= f.hidden_field :AuthorId, value: logged_in_user.id %>
+  <%= f.submit class: 'btn btn-primary' %>
+<% end %>

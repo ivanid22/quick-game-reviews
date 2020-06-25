@@ -1,0 +1,163 @@
+// Place all the styles related to the Users controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+@import './vars';
+
+.user-text-field {
+  padding: 5px;
+  border: 1px solid $color-5;
+}
+
+.user-submit {
+  max-width: 100px;
+  margin-top: 5px;
+  align-self: center;
+}
+
+.user-title {
+  align-self: center;
+}
+
+.user-form {
+  display: flex;
+  flex-direction: column;
+  width: 30%;
+  align-self: center;
+  padding: 20px;
+}
+
+.user-page__cover-picture-container {
+  height: 245px;
+}
+
+.user-page__cover-picture {
+  height: 245px;
+  width: 100%;
+}
+
+.user-page__avatar-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.user-page__user-action-button {
+  height: 40px;
+  margin: 0 0.9em;
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+}
+
+.user-page__user-action-button:hover {
+  text-decoration: none;
+}
+
+.user-page__user-action-button > i {
+  padding: 10px;
+  border: 1px solid lightgray;
+  border-radius: 50%;
+  color: lightgray;
+}
+
+.f-b {
+  height: 40px;
+  margin: 0 0.9em;
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+}
+
+.f-b:hover {
+  text-decoration: none;
+}
+
+.f-b > i {
+  padding: 10px;
+  border: 1px solid lightgray;
+  border-radius: 50%;
+  color: lightgray;
+}
+
+.user-page__user-avatar-image-container {
+  width: 130px;
+  height: 130px;
+}
+
+.user-page__user-avatar-image-container > img {
+  height: 100%;
+  border-radius: 50%;
+}
+
+.user-page__user-name-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.user-page__user-name {
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.user-page__statistics-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.user-page__statistics-item-container {
+  display: flex;
+  padding: 0.5em;
+  flex-direction: column;
+  align-items: center;
+}
+
+.user-page__extra-section {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+}
+
+.extra-section__subsection {
+  display: flex;
+  flex-direction: column;
+}
+
+.subsection__title {
+  padding: 2em 0;
+}
+
+.subsection__title > span {
+  text-transform: uppercase;
+}
+
+.subsection__content {
+  flex-direction: column;
+}
+
+.who-to-follow__item {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.8em;
+}
+
+.who-to-follow__item__avatar-container {
+  height: 75px;
+  width: 75px;
+  margin-right: 0.5em;
+}
+
+.who-to-follow__item__avatar-container__image {
+  height: 100%;
+  border-radius: 50%;
+}
+
+.who-to-follow__item__name__container {
+  text-align: right;
+}
+
+.home-right-sidebar {
+  min-height: 100vh;
+}

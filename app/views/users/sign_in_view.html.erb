@@ -1,0 +1,10 @@
+<h2 class="user-title">Sign in</h2>
+<%= form_tag( '/sign_in', class: 'user-form group', id: 'sign-in-form' , method: :post) do |f| %>
+<%= label_tag (:Username) %>
+<%= text_field_tag (:Username), nil, class: 'user-text-field' %>
+<%= submit_tag "Sign in", class: 'user-submit btn btn-primary' %>
+<% end %>
+<div class="group user-form ta-c">
+    <span>Need an account? </span>
+    <%= link_to "Sign up", new_user_path %>
+</div>
