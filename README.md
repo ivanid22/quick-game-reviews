@@ -53,6 +53,10 @@ Run the following command to start the server:
 
 - `rails server`
 
+## Running tests
+
+Open a terminal on the base directory of the project and run the command `rspec`
+
 # Live version
 
 You can visit a live version of the project [here](https://stormy-hollows-77323.herokuapp.com)
